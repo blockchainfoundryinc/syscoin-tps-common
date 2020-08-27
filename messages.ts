@@ -3,6 +3,10 @@ export interface SyscoinWebsocketMessage {
   message: any;
 }
 
-export interface GenerateAddressesMessage {
-  numAddresses: number;
+export class GenerateAddressesMessage {
+  static messageType = "generateAddresses";
+
+  constructor(public numAddresses = 0) {
+  }
 }
+
