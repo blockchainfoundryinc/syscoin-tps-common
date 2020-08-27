@@ -1,9 +1,7 @@
-import { Config } from '../../definitions';
-
 const dotenv = require('dotenv');
 dotenv.config({silent: true});
 
-export const config: Config = {
+export const config: CoordinatorConfig = {
   syscoin_ws_server: process.env.SYS_WS_SERVER || 'https://syscoin-websocket.blockchainfoundry.co',
   ws_port: Number(process.env.WS_PORT) || 9000,
   rpc: {
@@ -31,3 +29,34 @@ export const config: Config = {
   ssl_key: process.env.SSL_KEY || '',
   ssl_cert: process.env.SSL_CERT || ''
 };
+
+export interface CoordinatorConfig {
+  syscoin_ws_server: string;
+  ws_port: number;
+  rpc: CoordinatorRPCConfig;
+  num_clients: number;
+  cycle_time: number;
+  cycles_per_test: number;
+  start_tx: number;
+  growth_rate: 'linear' | 'exp';
+  target_tps: number;
+  use_allocations: boolean;
+  start_delay: number,
+  cycle_start_buffer: number,
+  use_ssl: boolean;
+  address_batch_size: number;
+  tx_outputs_batch_size: number;
+  mode: 'create' | 'consolidate' | 'status';
+  conslidate_tx_fee: number,
+  create_tx_fee: number,
+  ssl_key: string;
+  ssl_cert: string;
+}
+
+export interface CoordinatorRPCConfig {
+  host: string;
+  rpcPort: number;
+  username: string;
+  password: string;
+  logLevel: string;
+}
