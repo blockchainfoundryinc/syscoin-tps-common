@@ -5,8 +5,13 @@ export interface SyscoinWebsocketMessage {
 
 export class GenerateAddressesMessage {
   static messageType = "generateAddresses";
-
   constructor(public numAddresses = 0) {
+  }
+}
+
+export class AddressGenerationCompleteMessage {
+  static messageType = "addressGenerationComplete"
+  constructor(addresses: string[]) {
   }
 }
 
