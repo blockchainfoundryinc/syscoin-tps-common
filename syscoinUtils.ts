@@ -1,5 +1,5 @@
 import { SyscoinRpcClient, rpcServices } from "@syscoin/syscoin-js";
-import { config } from './config';
+const config  = require('./config');
 
 const sysConfig = {
   host: config.rpc.host,
