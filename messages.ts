@@ -11,7 +11,7 @@ export class GenerateAddressesMessage {
 
 export class AddressGenerationCompleteMessage {
   static messageType = "addressGenerationComplete"
-  constructor(addresses: string[]) {
+  constructor(public addresses: string[]) {
   }
 }
 
