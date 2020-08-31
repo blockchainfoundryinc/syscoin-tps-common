@@ -66,7 +66,7 @@ export const listUnspent = async () => {
   }
 }
 
-export const getNewAddressBatch = (label = undefined, addressType = undefined) => {
+export const getNewAddressBatch = (label?, addressType?) => {
   try {
     return rpcServices(client.callRpc).getNewAddress(label, addressType);
   } catch(e) {
