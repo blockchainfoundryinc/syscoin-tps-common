@@ -5,4 +5,5 @@ export interface TPSClient {
   addresses?: string[];
   socket: SocketIO.Socket;
   transactionsGenerated: boolean;
+  initComplete?: boolean;
 }
