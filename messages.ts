@@ -1,4 +1,5 @@
 import { config } from './config-coordinator';
+import { TPSClient } from './definitions';
 
 export interface SyscoinWebsocketMessage {
   topic: string;
@@ -20,7 +21,7 @@ export class InitClientCompleteMessage {
 export class StartTestMessage {
   static messageType = "startTest";
   public numTxs: number;
-  constructor(public testNum: number, public cycleNum: number, public startTime: number) {
+  constructor(public testNum: number, public cycleNum: number, public startTime: number, public clients: TPSClient[]) {
     this.numTxs = config.start_tx * testNum;
   }
 }
