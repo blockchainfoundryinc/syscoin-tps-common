@@ -11,8 +11,8 @@ export class InitClientMessage {
   }
 }
 
-export class ClientInitComplete {
-  static messageType = "clientInitComplete";
+export class InitClientCompleteMessage {
+  static messageType = "initClientComplete";
   constructor(public addresses: string[]) {
   }
 }
