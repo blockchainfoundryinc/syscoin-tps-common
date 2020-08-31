@@ -6,4 +6,5 @@ export interface TPSClient {
   socket: SocketIO.Socket;
   transactionsGenerated: boolean;
   initComplete?: boolean;
+  serialize: () => any;
 }
