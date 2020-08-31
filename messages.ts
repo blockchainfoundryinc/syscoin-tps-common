@@ -5,14 +5,14 @@ export interface SyscoinWebsocketMessage {
   message: any;
 }
 
-export class GenerateAddressesMessage {
-  static messageType = "generateAddresses";
-  constructor(public numAddresses = 0) {
+export class InitClientMessage {
+  static messageType = "initClient";
+  constructor(public id: string) {
   }
 }
 
-export class AddressGenerationCompleteMessage {
-  static messageType = "addressGenerationComplete";
+export class ClientInitComplete {
+  static messageType = "clientInitComplete";
   constructor(public addresses: string[]) {
   }
 }
