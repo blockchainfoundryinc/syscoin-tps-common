@@ -10,8 +10,14 @@ export class GenerateAddressesMessage {
 }
 
 export class AddressGenerationCompleteMessage {
-  static messageType = "addressGenerationComplete"
+  static messageType = "addressGenerationComplete";
   constructor(public addresses: string[]) {
+  }
+}
+
+export class StartTestMessage {
+  static messageType = "startTest";
+  constructor(public testNum: number, public cycleNum: number, public startTime: number) {
   }
 }
 

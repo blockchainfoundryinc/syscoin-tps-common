@@ -26,6 +26,7 @@ export const config: CoordinatorConfig = {
   mode: process.env.MODE as any || 'create',
   conslidate_tx_fee: Number(process.env.CONSOLIDATE_TX_FEE) || 0.0006,
   create_tx_fee: Number(process.env.CREATE_TX_FEE) || 0.0006,
+  utxo_amount: Number(process.env.UTXO_AMOUNT) || 0.001,
   ssl_key: process.env.SSL_KEY || '',
   ssl_cert: process.env.SSL_CERT || ''
 };
@@ -41,14 +42,15 @@ export interface CoordinatorConfig {
   growth_rate: 'linear' | 'exp';
   target_tps: number;
   use_allocations: boolean;
-  start_delay: number,
-  cycle_start_buffer: number,
+  start_delay: number;
+  cycle_start_buffer: number;
   use_ssl: boolean;
   address_batch_size: number;
   tx_outputs_batch_size: number;
   mode: 'create' | 'consolidate' | 'status';
-  conslidate_tx_fee: number,
-  create_tx_fee: number,
+  conslidate_tx_fee: number;
+  utxo_amount: number;
+  create_tx_fee: number;
   ssl_key: string;
   ssl_cert: string;
 }

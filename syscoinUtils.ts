@@ -42,6 +42,14 @@ export const sendRawTransaction = async (hex) => {
   }
 }
 
+export const sendMany = async (amounts) => {
+  try {
+    return await rpcServices(client.callRpc).sendMany('', amounts).call();
+  } catch(e) {
+    console.log("ERR sendMany", JSON.stringify(e.response.data.error));
+  }
+}
+
 export const listAddressGroupings = async () => {
   try {
     return await rpcServices(client.callRpc).listAddressGroupings().call();
